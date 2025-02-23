@@ -17,6 +17,15 @@ def print_events(events):
     print("")
 
 
+def add_event(event_details: dict):
+    
+    event = add_event_to_calendar(event_details)
+    return event
+
+
+
+
+
 
 
 

@@ -43,6 +43,25 @@ def add_event_to_calendar( event_details: dict):
     Args:
         calendar_id (str): ID of the calendar to add the event to
         event_details (dict): Event details including summary, time, etc.
+
+
+        # Example usage of add_event_to_calendar
+    event_details = {
+        'summary': 'Team Meeting',
+        'location': 'Conference Room A',
+        'description': 'Monthly team sync meeting',
+        'start': {
+            'dateTime': '2024-03-20T10:00:00-07:00',
+            'timeZone': 'Asia/Jerusalem',
+        },
+        'end': {
+            'dateTime': '2024-03-20T11:00:00-07:00',
+            'timeZone': 'Asia/Jerusalem',
+        }
+    }
+
+    # Call the function
+    result = add_event_to_calendar(event_details)
     
     Returns:
         dict: Created event object or None if failed
