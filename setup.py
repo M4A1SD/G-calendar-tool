@@ -5,8 +5,10 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'google-oauth2-tool',
-        'google-auth-oauthlib'
+        'google-api-python-client',
+        'google-auth-httplib2',
+        'google-auth-oauthlib',
+        'google-oauth2-tool'
     ],
     author='AC',  # Add your name here
     description='A Google Calendar integration module',

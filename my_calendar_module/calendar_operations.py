@@ -1,6 +1,6 @@
 import datetime
-from auth_handler import get_calendar_service
-from config import AI_CALENDAR_ID, PRIMARY_CALENDAR_ID
+from my_calendar_module.auth_handler import get_calendar_service
+from my_calendar_module.config import AI_CALENDAR_ID, PRIMARY_CALENDAR_ID
 
 def get_monthly_events(is_it_real_calendar: bool = False):
     """
