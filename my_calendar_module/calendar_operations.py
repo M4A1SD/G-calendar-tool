@@ -79,3 +79,47 @@ def add_event_to_calendar( event_details: dict):
             print("2. Delete token.json and re-run to re-authenticate")
             print("3. Verify the calendar ID is correct")
         return None 
+    
+
+def delete_event_from_calendar(event_name: str):
+    """
+    Deletes an event from the specified calendar.
+    
+    Args:
+        event_id (str): ID of the event to delete
+        
+    Returns:
+        bool: True if deletion was successful, False otherwise
+    """
+    try:
+        service = get_calendar_service()
+        event_id = get_event_id(event_name)
+        service.events().delete(calendarId=AI_CALENDAR_ID, eventId=event_id).execute()
+        print(f"Event {event_id} successfully deleted")
+        return True
+    except Exception as e:
+        print(f"Error deleting event from calendar: {str(e)}")
+        if "insufficientPermissions" in str(e):
+            print("\nTroubleshooting steps:")
+            print("1. Make sure you have access to the calendar ID:", AI_CALENDAR_ID)
+            print("2. Delete token.json and re-run to re-authenticate")
+            print("3. Verify the event ID is correct")
+        return False
+
+
+def get_event_id(event_name: str):
+    """
+    Retrieves the ID of an event from the specified calendar.
+    
+    Args:
+        event_name (str): Name of the event to search for
+        
+    Returns:
+        str: ID of the event or None if not found
+    """
+    events = get_monthly_events(is_it_real_calendar=True)
+    for event in events:
+        if event['summary'] == event_name:
+            return event['id']
+    return None
+

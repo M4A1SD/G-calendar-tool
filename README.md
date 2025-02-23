@@ -74,6 +74,17 @@ description='A test event added to my custom calendar'
 add_event_to_calendar(event)
 ```
 
+## Delete event
+```python
+delete_event_from_calendar(event_id)
+```
+## Read calendar
+```python
+get_monthly_events(is_it_real_calendar=True) # my calendar
+get_monthly_events(is_it_real_calendar=False) # ai calendar
+```
+
+
 
 
 ## Troubleshooting
