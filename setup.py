@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='my_calendar_module',
-    version='0.1',
+    version='0.5',
     packages=find_packages(),
     install_requires=[
         'google-api-python-client',
