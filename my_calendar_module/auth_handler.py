@@ -30,8 +30,8 @@ def get_calendar_service():
                 )
                 creds = flow.run_local_server(
                     port=REDIRECT_PORT,
-                    authorization_prompt_message='Please visit this URL: {url}',
-                    success_message='The auth flow is complete; you may close this window.'
+                    authorization_prompt_message='Please visit this URL: {url} and authorize the application.\n',
+                    success_message='The auth flow is complete; you may close the opened browser window.'
                 )
                 with open(TOKEN_FILE, 'w') as token:
                     token.write(creds.to_json())

@@ -69,7 +69,6 @@ def add_event_to_calendar( event_details: dict):
     try:
         service = get_calendar_service()
         event = service.events().insert(calendarId=AI_CALENDAR_ID, body=event_details).execute()
-        # print(f"Event created: {event.get('htmlLink')}")
         print(f"Event created: {event['summary']}")
         return event
     except Exception as e:
