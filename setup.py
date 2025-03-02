@@ -2,13 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name='my_calendar_module',
-    version='0.5',
+    version='0.7',
     packages=find_packages(),
     install_requires=[
         'google-api-python-client',
         'google-auth-httplib2',
         'google-auth-oauthlib',
-        'google-oauth2-tool'
+        'google-oauth2-tool',
+        'python-dotenv'
     ],
     author='AC',  # Add your name here
     description='A Google Calendar integration module',
