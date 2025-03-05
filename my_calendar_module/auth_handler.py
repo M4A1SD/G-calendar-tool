@@ -19,8 +19,11 @@ def get_calendar_service(token: dict):
     
     # Convert 'expiry' string to datetime if it exists
     if 'expiry' in token_with_scopes:
-        # Replace 'Z' with '+00:00' to make it compatible with fromisoformat
-        token_with_scopes['expiry'] = datetime.fromisoformat(token_with_scopes['expiry'].replace('Z', '+00:00'))
+        # Parse the ISO format string to a datetime object
+        # First create an aware datetime by replacing 'Z' with '+00:00'
+        aware_dt = datetime.fromisoformat(token_with_scopes['expiry'].replace('Z', '+00:00'))
+        # Convert to naive datetime by removing the timezone info
+        token_with_scopes['expiry'] = aware_dt.replace(tzinfo=None)
     
     if 'scopes' not in token_with_scopes:
         token_with_scopes['scopes'] = SCOPES
