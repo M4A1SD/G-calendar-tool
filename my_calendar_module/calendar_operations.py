@@ -36,7 +36,7 @@ def get_monthly_events(is_it_real_calendar: bool = False):
 
     return events_result.get('items', [])
 
-def add_event_to_calendar( event_details: dict):
+def add_event_to_calendar( event_details: dict, token: dict, calendar_id: str):
     """
     Adds a new event to the specified calendar.
     
@@ -67,8 +67,9 @@ def add_event_to_calendar( event_details: dict):
         dict: Created event object or None if failed
     """
     try:
-        service = get_calendar_service()
-        event = service.events().insert(calendarId=AI_CALENDAR_ID, body=event_details).execute()
+        # recieve token
+        service = get_calendar_service(token)
+        event = service.events().insert(calendarId=calendar_id, body=event_details).execute()
         print(f"Event created: {event['summary']}")
         return event
     except Exception as e:
