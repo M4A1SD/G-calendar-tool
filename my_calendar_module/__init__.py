@@ -3,7 +3,6 @@
 from .config import (
     SCOPES,
     TOKEN_FILE,
-    CREDENTIALS_FILE,
     REDIRECT_PORT,
     REDIRECT_URI,
     AI_CALENDAR_ID,

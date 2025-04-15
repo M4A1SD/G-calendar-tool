@@ -22,4 +22,4 @@ REDIRECT_URI = f'http://localhost:{REDIRECT_PORT}'
 
 # File paths
 TOKEN_FILE = 'token.json'
-CREDENTIALS_FILE = 'credentials.json' 
+# CREDENTIALS_FILE = 'credentials.json' 

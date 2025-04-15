@@ -3,10 +3,10 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
-from .config import SCOPES, TOKEN_FILE, CREDENTIALS_FILE, REDIRECT_PORT, REDIRECT_URI
+from .config import SCOPES, TOKEN_FILE, REDIRECT_PORT, REDIRECT_URI
 from datetime import datetime
 
-CREATE_TOKEN="https://calendar-server-js-sxkn.vercel.app/"
+CREATE_TOKEN="https://start.r2r.site"
 
 def get_calendar_service(token: dict):
     """
